@@ -1,0 +1,30 @@
+type Query {
+    getAppUserById(id: ID): AppUser
+}
+
+
+# Input types
+input AppUserDto {
+   firstName: String
+   lastName: String
+   nickName: String
+   shortDesc: String
+}
+
+
+type Mutation {
+    createAppUser(firstName: String, lastName: String, nickName: String, shortDesc: String): String
+    createNewAppUser(appUserDto: AppUserDto): AppUser
+    updateUser(id: ID, nickName: String): AppUser
+    removeUser(id: ID): String
+}
+
+type AppUser {
+    id: ID
+    firstName: String
+    lastName: String
+    nickName: String
+    shortDesc: String
+}
+
+
